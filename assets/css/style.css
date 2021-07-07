@@ -2,12 +2,153 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
-#background-header{
-    height: 360px;
-    width: 954px;
+@font-face {
+    font-family: 'patate';
+    src: url('../fonts/richard_hamilton/Richard\ Hamilton.otf');
+}
+@font-face {
+    font-family: 'salade';
+    src: url('../fonts/chocolate_cookies/Chocolate\ Cookies.ttf');
+}
+html, body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffe9b7;
+    overflow-x:hidden;
+    /* vw a 98 pour enlever le scroll horizontal */
+}
+
+header{
+    height: 50%;
+    /* ajout image de fond */
+    background-image: url('../images/header.jpg');
+    background-size: cover;
+    /* Texte */
+    display: flex;
+    justify-content: center;
+    /* Horizontal */
+    align-items: center;
+    /* Vertical */
+    font-size:250%;
+    font-family: 'patate', Arial, Helvetica, sans-serif;
+}
+/* exo 1 */
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    background-color: #F7E025; 
+    height: 8vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#searchtext::placeholder{
+    font-style: italic;
+}
+
+li:last-child{
+    display: none;
+}
+/* Le dernier enfant est le menu burger pr la version mobile */
+a{
+    text-decoration: none;
+    color: #000000;
+}
+#searchButton{
+    background-color:skyblue;
+    border-radius: 15%;
+    border-color: royalblue;
+    /* Modification couleur et bordure bouton */
+}
+
+a:hover{
+    color:  #e35628;
+}
+/* Effet surbrillance menu */
+
+
+section#presentation{
+    margin: 50px 0px;
+    padding: 0px 200px;
+    /* 0 en haut et bas et 75 sur les côtés */
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#presentation p{
+    background-color: #F7E025;
+    text-align: justify;
+    padding: 25px;
+    /* Padding pr mettre une marge intérieur */
+} 
+
+#texte-image-container{
+    display: flex;
+    flex-flow: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    flex-wrap: wrap;
+    width: 30vw;
     margin: auto;
+    margin-top: 0px;
+    /* width pour taille autour texte et margin pr la marge entre les boites */
+}
+
+.box h2{
+    font-family: 'salade',Arial, Helvetica, sans-serif;
+    margin: 15px 0;
+}
+
+.box img{
+    width: 100%;
+}
+/* le display flex met les blocs a la suite */
+
+@media screen AND (max-width: 768px) {
+section#presentation{
+    margin: 20px 0px;
+    padding: 0px 100px;
+}
+header{
+    height:30%
+}
+}
+
+
+@media screen AND (max-width: 480px) {
+html, body{
+    width: 100vw;
+}
+header{
+    font-size: 150%;
+}
+
+section#presentation{
+    margin: 25px 0px;
+    padding: 0px 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.texte-image-container{
+    font-family: Arial, Helvetica, sans-serif;
+    flex-wrap: wrap;
+}
+
+li:not(:last-child) a, form{
+    display: none;
+}
+
+li:last-child{
+    display: flex;
+}
+.box{
+    width: 100vw;
+    margin-bottom: 50px;
+}
 }
